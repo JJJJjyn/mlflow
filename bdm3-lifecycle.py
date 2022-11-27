@@ -21,8 +21,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 # TODO: Set a descriptive name. This is optional, but makes it easier to keep track of your runs.
 with mlflow.start_run(run_name="GBRT"):
     # TODO: Insert path to dataset
-    path = "new_data.json"
-    data = pd.read_json(path)
+    data = pd.read_json("new_data.json")
     X = data[["Speed","Direction"]]
     y = data["Total"]
     # TODO: Handle missing data
@@ -64,7 +63,6 @@ with mlflow.start_run(run_name="GBRT"):
     number_of_splits = 5
 
     #TODO: Log your parameters. What parameters are important to log?
-    mlflow.log_param("data_file",path)
     mlflow.log_param("number_of_splits",number_of_splits)
     mlflow.log_param('n_estimators',4000)
     mlflow.log_param('max_depth', 4)
