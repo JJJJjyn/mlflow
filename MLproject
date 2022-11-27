@@ -1,0 +1,14 @@
+name: bdm3
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_file: "new_data.json"
+      number_of_splits: {type: int, default: 5}
+      n_estimators: {type: int, default: 4000}
+      max_depth: {type: int, default: 4}
+      learning_rate: {type: float, default: 0.01}
+      min_samples_split: {type: int, default: 3}
+    command: "python bdm3-lifecycle.py {number_of_splits}{n_estimators}{max_depth}{learning_rate}{min_samples_split}{data_file}"
