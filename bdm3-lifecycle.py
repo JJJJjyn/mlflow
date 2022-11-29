@@ -2,7 +2,7 @@ import pandas as pd
 import mlflow
 
 #mlflow.set_tracking_uri("http://localhost:5000")
-#mlflow.set_tracking_uri("http://training.itu.dk:5000/")
+mlflow.set_tracking_uri("http://training.itu.dk:5000/")
 mlflow.set_experiment("yuji-BDM3")
 
 from sklearn.compose import ColumnTransformer
