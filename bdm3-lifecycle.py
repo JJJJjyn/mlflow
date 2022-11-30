@@ -91,7 +91,8 @@ with mlflow.start_run(run_name="GBRT"):
             scores_test.append(score_test)
     
     # Log model
-    mlflow.sklearn.save_model(gbrt_pipel,'model')
+    #mlflow.sklearn.save_model(gbrt_pipel,'model')
+    mlflow.sklearn.log_model(gbrt_pipel,'model')
     
     # Log a summary of the metrics
     for name, _, scores_train, scores_test in metrics:
